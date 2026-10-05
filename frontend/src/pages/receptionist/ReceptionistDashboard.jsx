@@ -332,7 +332,7 @@ export const ReceptionistDashboard = () => {
       </div>
 
       {/* QUEUE MANAGEMENT TABLE WITH ACTIONS */}
-      <div className="med-card" style={{ padding: '1.5rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
         {/* Table Filter Controls */}
         <div
           style={{
@@ -354,7 +354,7 @@ export const ReceptionistDashboard = () => {
                 className="form-control"
                 value={selectedDoctorId}
                 onChange={(e) => setSelectedDoctorId(e.target.value)}
-                style={{ width: 'auto', fontWeight: 600 }}
+                style={{ width: 'auto', maxWidth: '100%', fontWeight: 600 }}
               >
                 <option value="all">All Doctors</option>
                 {doctors.map((doc) => (
@@ -373,7 +373,7 @@ export const ReceptionistDashboard = () => {
                 className="form-control"
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                style={{ width: 'auto' }}
+                style={{ width: 'auto', maxWidth: '100%' }}
               >
                 <option value="all">All Statuses</option>
                 <option value="waiting">Waiting</option>
@@ -388,7 +388,7 @@ export const ReceptionistDashboard = () => {
           </div>
 
           {/* Search box */}
-          <div style={{ position: 'relative', minWidth: '240px' }}>
+          <div style={{ position: 'relative', minWidth: 'min(100%, 220px)', flex: '1 1 200px' }}>
             <input
               type="text"
               className="form-control"

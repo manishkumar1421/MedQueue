@@ -17,7 +17,7 @@ export const Footer = () => {
       style={{
         backgroundColor: '#ffffff',
         borderTop: '1px solid #e2e8f0',
-        paddingTop: '3.5rem',
+        paddingTop: 'clamp(2.5rem, 4vw, 3.5rem)',
         paddingBottom: '2rem',
         marginTop: 'auto'
       }}
@@ -27,9 +27,9 @@ export const Footer = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '2.5rem',
-            marginBottom: '3rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
+            gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+            marginBottom: '2.5rem'
           }}
         >
           {/* Col 1: Brand Info */}

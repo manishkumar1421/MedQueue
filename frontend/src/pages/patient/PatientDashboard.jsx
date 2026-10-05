@@ -54,30 +54,30 @@ export const PatientDashboard = () => {
           background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
           color: '#ffffff',
           borderRadius: '16px',
-          padding: '1.75rem 2rem',
-          marginBottom: '2rem',
+          padding: 'clamp(1.25rem, 3vw, 1.75rem)',
+          marginBottom: '1.5rem',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
-          gap: '1.25rem'
+          gap: '1rem'
         }}
       >
         <div>
-          <div style={{ fontSize: '0.85rem', color: '#e0f2fe', fontWeight: 600, marginBottom: '0.35rem' }}>
+          <div style={{ fontSize: '0.8rem', color: '#e0f2fe', fontWeight: 600, marginBottom: '0.25rem' }}>
             PATIENT OUTPATIENT PORTAL
           </div>
-          <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
+          <h1 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', fontWeight: 800, color: '#ffffff', margin: 0 }}>
             Welcome back, {currentUser?.name || 'Patient'}
           </h1>
-          <p style={{ margin: '0.4rem 0 0', color: '#e0f2fe', fontSize: '0.925rem' }}>
+          <p style={{ margin: '0.35rem 0 0', color: '#e0f2fe', fontSize: '0.875rem' }}>
             Your next consultation is scheduled with Dr. Amit Sharma (Cardiology) in Room 204.
           </p>
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div className="btn-group-responsive">
           <Link to="/patient/book-appointment" className="btn btn-secondary" style={{ backgroundColor: '#ffffff', color: '#0284c7' }}>
             <CalendarPlus size={16} />
-            Book New Appointment
+            Book Appointment
           </Link>
           <Link to="/patient/my-queue" className="btn" style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.4)' }}>
             <Clock size={16} />
@@ -162,7 +162,7 @@ export const PatientDashboard = () => {
       </div>
 
       {/* MAIN SECTION: "Current Queue Status" */}
-      <div className="med-card" style={{ padding: '2rem', marginBottom: '2rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)', marginBottom: '1.75rem' }}>
         <div
           style={{
             display: 'flex',
@@ -178,16 +178,16 @@ export const PatientDashboard = () => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
               <div className="live-pulse-dot" />
-              <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
+              <h2 style={{ fontSize: 'clamp(1.2rem, 3vw, 1.4rem)', fontWeight: 800, color: '#0f172a', margin: 0 }}>
                 Current Queue Status
               </h2>
             </div>
-            <p style={{ margin: '0.25rem 0 0', fontSize: '0.875rem', color: '#64748b' }}>
+            <p style={{ margin: '0.25rem 0 0', fontSize: '0.85rem', color: '#64748b' }}>
               Real-time synchronization with Doctor's consultation desk
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             <button
               type="button"
               className="btn btn-secondary btn-sm"
@@ -206,9 +206,9 @@ export const PatientDashboard = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1.25rem',
-            marginBottom: '1.75rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
+            gap: '1rem',
+            marginBottom: '1.5rem',
             padding: '1.25rem',
             backgroundColor: '#f8fafc',
             borderRadius: '12px',
@@ -286,8 +286,8 @@ export const PatientDashboard = () => {
       </div>
 
       {/* Recent Appointments Table */}
-      <div className="med-card" style={{ padding: '1.75rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1rem, 3vw, 1.75rem)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
           <div>
             <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>
               My Appointments & Consultations

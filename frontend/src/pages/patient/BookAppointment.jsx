@@ -209,7 +209,7 @@ export const BookAppointment = () => {
         </div>
       ) : (
         /* Multi-step Form Wizard */
-        <div className="med-card" style={{ padding: '2rem' }}>
+        <div className="med-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}>
           {/* Progress Steps Header */}
           <div className="steps-container">
             {steps.map((st) => {
@@ -243,7 +243,7 @@ export const BookAppointment = () => {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
                   gap: '1rem'
                 }}
               >
@@ -294,7 +294,7 @@ export const BookAppointment = () => {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
                   gap: '1.25rem'
                 }}
               >
@@ -410,7 +410,7 @@ export const BookAppointment = () => {
                 <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#334155', marginBottom: '0.75rem' }}>
                   Morning Session
                 </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 110px), 1fr))', gap: '0.65rem' }}>
                   {morningSlots.map((slot) => {
                     const isSelected = selectedSlot === slot.time;
                     return (
@@ -453,7 +453,7 @@ export const BookAppointment = () => {
                 <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#334155', marginBottom: '0.75rem' }}>
                   Afternoon Session
                 </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 110px), 1fr))', gap: '0.65rem' }}>
                   {afternoonSlots.map((slot) => {
                     const isSelected = selectedSlot === slot.time;
                     return (
@@ -517,7 +517,7 @@ export const BookAppointment = () => {
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))',
                     gap: '1.25rem'
                   }}
                 >
@@ -549,7 +549,7 @@ export const BookAppointment = () => {
               </div>
 
               {/* Additional Options */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div className="form-row-2" style={{ marginBottom: '1.5rem' }}>
                 <div className="form-group">
                   <label className="form-label">Appointment Mode</label>
                   <select
@@ -584,7 +584,9 @@ export const BookAppointment = () => {
               alignItems: 'center',
               borderTop: '1px solid #e2e8f0',
               paddingTop: '1.5rem',
-              marginTop: '1.5rem'
+              marginTop: '1.5rem',
+              flexWrap: 'wrap',
+              gap: '0.75rem'
             }}
           >
             {currentStep > 1 ? (

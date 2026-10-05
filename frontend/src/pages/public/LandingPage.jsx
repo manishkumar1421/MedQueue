@@ -108,7 +108,7 @@ export const LandingPage = () => {
         id="home"
         style={{
           background: 'linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%)',
-          padding: '4.5rem 0 3.5rem',
+          padding: 'clamp(2.5rem, 5vw, 4.5rem) 0 3rem',
           borderBottom: '1px solid #e2e8f0'
         }}
       >
@@ -116,8 +116,8 @@ export const LandingPage = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+              gap: 'clamp(1.75rem, 4vw, 3rem)',
               alignItems: 'center'
             }}
           >
@@ -132,9 +132,9 @@ export const LandingPage = () => {
                   backgroundColor: '#e0f2fe',
                   borderRadius: '9999px',
                   color: '#0284c7',
-                  fontSize: '0.825rem',
+                  fontSize: '0.8rem',
                   fontWeight: 700,
-                  marginBottom: '1.25rem'
+                  marginBottom: '1rem'
                 }}
               >
                 <Zap size={15} />
@@ -143,12 +143,12 @@ export const LandingPage = () => {
 
               <h1
                 style={{
-                  fontSize: '2.85rem',
+                  fontSize: 'clamp(2rem, 5vw, 2.85rem)',
                   fontWeight: 800,
                   color: '#0f172a',
                   lineHeight: 1.15,
                   letterSpacing: '-0.03em',
-                  marginBottom: '1.25rem'
+                  marginBottom: '1rem'
                 }}
               >
                 Smart Hospital <br />
@@ -157,10 +157,10 @@ export const LandingPage = () => {
 
               <p
                 style={{
-                  fontSize: '1.15rem',
+                  fontSize: 'clamp(0.95rem, 2vw, 1.15rem)',
                   color: '#475569',
                   lineHeight: 1.6,
-                  marginBottom: '2rem',
+                  marginBottom: '1.75rem',
                   maxWidth: '540px'
                 }}
               >
@@ -168,7 +168,7 @@ export const LandingPage = () => {
               </p>
 
               {/* CTAs */}
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
+              <div className="btn-group-responsive" style={{ marginBottom: '2rem' }}>
                 <Link to="/patient/book-appointment" className="btn btn-primary btn-lg">
                   <Calendar size={18} />
                   Book Appointment
@@ -362,16 +362,16 @@ export const LandingPage = () => {
       </section>
 
       {/* SECTION 1: HOW IT WORKS (7 STEPS) */}
-      <section id="how-it-works" style={{ padding: '5rem 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
+      <section id="how-it-works" style={{ padding: 'clamp(2.5rem, 5vw, 5rem) 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.5rem' }}>
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 2.5rem' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               SEAMLESS PATIENT JOURNEY
             </span>
-            <h2 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.65rem, 4vw, 2.25rem)', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.85rem' }}>
               How MedQueue Works
             </h2>
-            <p style={{ fontSize: '1.05rem', color: '#64748b' }}>
+            <p style={{ fontSize: 'clamp(0.925rem, 2vw, 1.05rem)', color: '#64748b' }}>
               A 7-step frictionless hospital experience from appointment booking to doctor consultation.
             </p>
           </div>
@@ -379,8 +379,8 @@ export const LandingPage = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '1.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
+              gap: '1.25rem'
             }}
           >
             {[
@@ -450,16 +450,16 @@ export const LandingPage = () => {
       </section>
 
       {/* SECTION 2: HOSPITAL SERVICES */}
-      <section id="services" style={{ padding: '5rem 0', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+      <section id="services" style={{ padding: 'clamp(2.5rem, 5vw, 5rem) 0', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.5rem' }}>
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 2.5rem' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               COMPREHENSIVE CLINICAL EXCELLENCE
             </span>
-            <h2 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.65rem, 4vw, 2.25rem)', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.85rem' }}>
               Hospital Services & Facilities
             </h2>
-            <p style={{ fontSize: '1.05rem', color: '#64748b' }}>
+            <p style={{ fontSize: 'clamp(0.925rem, 2vw, 1.05rem)', color: '#64748b' }}>
               World-class healthcare services powered by integrated queue management and compassionate patient care.
             </p>
           </div>
@@ -467,8 +467,8 @@ export const LandingPage = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.75rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+              gap: '1.25rem'
             }}
           >
             {[
@@ -515,16 +515,16 @@ export const LandingPage = () => {
       </section>
 
       {/* SECTION 3: DEPARTMENTS */}
-      <section id="departments" style={{ padding: '5rem 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
+      <section id="departments" style={{ padding: 'clamp(2.5rem, 5vw, 5rem) 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.5rem' }}>
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 2.5rem' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               SPECIALIZED DIVISIONS
             </span>
-            <h2 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.65rem, 4vw, 2.25rem)', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.85rem' }}>
               Clinical Departments
             </h2>
-            <p style={{ fontSize: '1.05rem', color: '#64748b' }}>
+            <p style={{ fontSize: 'clamp(0.925rem, 2vw, 1.05rem)', color: '#64748b' }}>
               Select your department to view available senior specialists, OPD room numbers, and current queue volumes.
             </p>
           </div>
@@ -532,8 +532,8 @@ export const LandingPage = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))',
-              gap: '1.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
+              gap: '1.25rem'
             }}
           >
             {departments.map((dept) => (
@@ -594,16 +594,16 @@ export const LandingPage = () => {
       </section>
 
       {/* SECTION 4: FEATURED DOCTORS */}
-      <section id="doctors" style={{ padding: '5rem 0', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+      <section id="doctors" style={{ padding: 'clamp(2.5rem, 5vw, 5rem) 0', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.5rem' }}>
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 2.5rem' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               RENOWNED CONSULTANTS
             </span>
-            <h2 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.65rem, 4vw, 2.25rem)', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.85rem' }}>
               Meet Our Specialist Doctors
             </h2>
-            <p style={{ fontSize: '1.05rem', color: '#64748b' }}>
+            <p style={{ fontSize: 'clamp(0.925rem, 2vw, 1.05rem)', color: '#64748b' }}>
               Board-certified specialists dedicated to delivering exceptional medical outcomes with minimal patient waiting times.
             </p>
           </div>
@@ -611,8 +611,8 @@ export const LandingPage = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.75rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+              gap: '1.25rem'
             }}
           >
             {doctors.map((doc) => (
@@ -694,16 +694,16 @@ export const LandingPage = () => {
       </section>
 
       {/* SECTION 5: WHY CHOOSE MEDQUEUE */}
-      <section style={{ padding: '5rem 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
+      <section style={{ padding: 'clamp(2.5rem, 5vw, 5rem) 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.5rem' }}>
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 2.5rem' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               TRANSFORMATIVE ADVANTAGES
             </span>
-            <h2 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.65rem, 4vw, 2.25rem)', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.85rem' }}>
               Why Choose MedQueue
             </h2>
-            <p style={{ fontSize: '1.05rem', color: '#64748b' }}>
+            <p style={{ fontSize: 'clamp(0.925rem, 2vw, 1.05rem)', color: '#64748b' }}>
               Designed hand-in-hand with leading hospital administrators and chief medical officers.
             </p>
           </div>
@@ -711,8 +711,8 @@ export const LandingPage = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '1.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+              gap: '1.25rem'
             }}
           >
             {[
@@ -762,48 +762,48 @@ export const LandingPage = () => {
         style={{
           background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
           color: '#ffffff',
-          padding: '4rem 0'
+          padding: 'clamp(2.5rem, 5vw, 4rem) 0'
         }}
       >
         <div className="container">
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+              gap: '1.5rem',
               textAlign: 'center'
             }}
           >
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+              <div style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
                 45+
               </div>
-              <div style={{ fontSize: '1rem', color: '#e0f2fe', fontWeight: 600 }}>
-                Total Specialist Doctors
+              <div style={{ fontSize: '0.9rem', color: '#e0f2fe', fontWeight: 600 }}>
+                Specialist Doctors
               </div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+              <div style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
                 12
               </div>
-              <div style={{ fontSize: '1rem', color: '#e0f2fe', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.9rem', color: '#e0f2fe', fontWeight: 600 }}>
                 Clinical Departments
               </div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+              <div style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
                 85,000+
               </div>
-              <div style={{ fontSize: '1rem', color: '#e0f2fe', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.9rem', color: '#e0f2fe', fontWeight: 600 }}>
                 Patients Served
               </div>
             </div>
             <div>
-              <div style={{ fontSize: '3rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+              <div style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
                 14 Min
               </div>
-              <div style={{ fontSize: '1rem', color: '#e0f2fe', fontWeight: 600 }}>
-                Average Waiting Time
+              <div style={{ fontSize: '0.9rem', color: '#e0f2fe', fontWeight: 600 }}>
+                Avg Waiting Time
               </div>
             </div>
           </div>
@@ -870,13 +870,13 @@ export const LandingPage = () => {
       </section>
 
       {/* SECTION 8: CONTACT SECTION */}
-      <section id="contact" style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
+      <section id="contact" style={{ padding: 'clamp(2.5rem, 5vw, 5rem) 0', backgroundColor: '#ffffff' }}>
         <div className="container">
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+              gap: 'clamp(1.75rem, 4vw, 3rem)',
               alignItems: 'start'
             }}
           >
@@ -885,10 +885,10 @@ export const LandingPage = () => {
               <span style={{ fontSize: '0.825rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                 PATIENT HELP & SUPPORT
               </span>
-              <h2 style={{ fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 1rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.65rem, 4vw, 2.25rem)', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 1rem' }}>
                 Contact Hospital Desk
               </h2>
-              <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.6, marginBottom: '2rem' }}>
+              <p style={{ fontSize: 'clamp(0.925rem, 2vw, 1rem)', color: '#64748b', lineHeight: 1.6, marginBottom: '2rem' }}>
                 Have inquiries regarding queue status, special doctor appointments, or corporate insurance coverage? Our helpdesk is here to assist 24/7.
               </p>
 
@@ -932,7 +932,7 @@ export const LandingPage = () => {
             </div>
 
             {/* Interactive Contact Form */}
-            <div className="med-card" style={{ padding: '2rem' }}>
+            <div className="med-card" style={{ padding: 'clamp(1.25rem, 4vw, 2rem)' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>
                 Send Us a Message
               </h3>
@@ -953,7 +953,7 @@ export const LandingPage = () => {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div className="form-row-2">
                   <div className="form-group">
                     <label className="form-label">Email Address <span className="required">*</span></label>
                     <input

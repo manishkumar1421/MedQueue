@@ -57,7 +57,7 @@ export const ForgotPasswordPage = () => {
           </p>
         </div>
 
-        <div className="med-card" style={{ padding: '2rem' }}>
+        <div className="med-card" style={{ padding: 'clamp(1.25rem, 5vw, 2rem)' }}>
           {submitted ? (
             <div style={{ textAlign: 'center', padding: '1rem 0' }}>
               <div

@@ -93,7 +93,7 @@ export const LoginPage = () => {
         </div>
 
         {/* Card */}
-        <div className="med-card" style={{ padding: '2rem' }}>
+        <div className="med-card" style={{ padding: 'clamp(1.25rem, 5vw, 2rem)' }}>
           <form onSubmit={handleSubmit} noValidate>
 
             {/* Email or Phone */}

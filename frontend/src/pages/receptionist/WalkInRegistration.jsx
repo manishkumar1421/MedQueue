@@ -135,14 +135,14 @@ export const WalkInRegistration = () => {
           </div>
         </div>
       ) : (
-        <div className="med-card" style={{ padding: '2rem' }}>
+        <div className="med-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}>
           <form onSubmit={handleSubmit}>
             {/* Priority Selector Banner */}
             <div style={{ marginBottom: '1.75rem' }}>
               <label className="form-label" style={{ marginBottom: '0.5rem', display: 'block' }}>
                 Triage Priority Level <span className="required">*</span>
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '0.75rem' }}>
                 {[
                   {
                     level: 'Normal',
@@ -197,7 +197,7 @@ export const WalkInRegistration = () => {
             </div>
 
             {/* Demographics */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.25rem' }}>
               <div className="form-group">
                 <label className="form-label">Patient Full Name <span className="required">*</span></label>
                 <input

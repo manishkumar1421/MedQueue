@@ -92,29 +92,29 @@ export const MyQueue = () => {
             Simulate Next Call
           </button>
         </div>
-      </div>
-
-      {/* CALL ALERT BANNER IF PATIENT IS CALLED */}
+      </div>      {/* CALL ALERT BANNER IF PATIENT IS CALLED */}
       {isMyTokenCalled && (
         <div
           style={{
             backgroundColor: '#e0f2fe',
             border: '2px solid #0284c7',
             borderRadius: '16px',
-            padding: '1.5rem 2rem',
-            marginBottom: '2rem',
+            padding: 'clamp(1rem, 3vw, 1.5rem)',
+            marginBottom: '1.75rem',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1rem',
             boxShadow: '0 10px 25px -5px rgba(2, 132, 199, 0.25)',
             animation: 'pulseLight 1.8s infinite'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <div
               style={{
-                width: '54px',
-                height: '54px',
+                width: '48px',
+                height: '48px',
                 borderRadius: '50%',
                 backgroundColor: '#0284c7',
                 color: '#ffffff',
@@ -124,13 +124,13 @@ export const MyQueue = () => {
                 flexShrink: 0
               }}
             >
-              <BellRing size={28} className="animate-bounce" />
+              <BellRing size={24} className="animate-bounce" />
             </div>
             <div>
-              <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0369a1', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                 YOUR TOKEN HAS BEEN CALLED!
               </div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0f172a' }}>
+              <div style={{ fontSize: 'clamp(1.15rem, 2.5vw, 1.4rem)', fontWeight: 800, color: '#0f172a' }}>
                 Please proceed immediately to Room {myQueueItem?.roomNumber}
               </div>
               <p style={{ margin: '0.2rem 0 0', fontSize: '0.85rem', color: '#475569' }}>
@@ -139,7 +139,7 @@ export const MyQueue = () => {
             </div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <span style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0284c7', fontFamily: 'monospace' }}>
+            <span style={{ fontSize: 'clamp(2rem, 5vw, 2.6rem)', fontWeight: 800, color: '#0284c7', fontFamily: 'monospace' }}>
               {myQueueItem?.tokenNumber}
             </span>
           </div>
@@ -147,13 +147,13 @@ export const MyQueue = () => {
       )}
 
       {/* CORE QUEUE HERO CARD */}
-      <div className="med-card" style={{ padding: '2rem', marginBottom: '2rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)', marginBottom: '1.75rem' }}>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
-            marginBottom: '2rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: '1.25rem',
+            marginBottom: '1.75rem'
           }}
         >
           {/* Currently Serving Display */}
@@ -162,7 +162,7 @@ export const MyQueue = () => {
               background: '#f0fdf4',
               border: '2px solid #86efac',
               borderRadius: '16px',
-              padding: '1.75rem',
+              padding: '1.5rem',
               textAlign: 'center',
               display: 'flex',
               flexDirection: 'column',
@@ -172,7 +172,7 @@ export const MyQueue = () => {
           >
             <span
               style={{
-                fontSize: '0.8rem',
+                fontSize: '0.78rem',
                 fontWeight: 800,
                 color: '#15803d',
                 letterSpacing: '0.08em',
@@ -183,20 +183,20 @@ export const MyQueue = () => {
             </span>
             <div
               style={{
-                fontSize: '3.6rem',
+                fontSize: 'clamp(2.5rem, 6vw, 3.6rem)',
                 fontWeight: 800,
                 color: '#166534',
                 fontFamily: 'monospace',
                 lineHeight: 1.1,
-                margin: '0.4rem 0'
+                margin: '0.35rem 0'
               }}
             >
               {stats.currentServing ? stats.currentServing.tokenNumber : 'None'}
             </div>
-            <div style={{ fontSize: '0.9rem', color: '#166534', fontWeight: 600 }}>
+            <div style={{ fontSize: '0.875rem', color: '#166534', fontWeight: 600 }}>
               {stats.currentServing ? stats.currentServing.patientName : 'Desk Waiting'}
             </div>
-            <span style={{ fontSize: '0.78rem', color: '#15803d', marginTop: '0.3rem' }}>
+            <span style={{ fontSize: '0.75rem', color: '#15803d', marginTop: '0.25rem' }}>
               OPD Room {myQueueItem?.roomNumber || '204'}
             </span>
           </div>
@@ -204,10 +204,10 @@ export const MyQueue = () => {
           {/* Your Token Display */}
           <div
             style={{
-              background: '#f0f9ff',
+              background: '#f0fdf4',
               border: '2px solid #7dd3fc',
               borderRadius: '16px',
-              padding: '1.75rem',
+              padding: '1.5rem',
               textAlign: 'center',
               display: 'flex',
               flexDirection: 'column',
@@ -217,7 +217,7 @@ export const MyQueue = () => {
           >
             <span
               style={{
-                fontSize: '0.8rem',
+                fontSize: '0.78rem',
                 fontWeight: 800,
                 color: '#0369a1',
                 letterSpacing: '0.08em',
@@ -228,12 +228,12 @@ export const MyQueue = () => {
             </span>
             <div
               style={{
-                fontSize: '3.6rem',
+                fontSize: 'clamp(2.5rem, 6vw, 3.6rem)',
                 fontWeight: 800,
                 color: '#0284c7',
                 fontFamily: 'monospace',
                 lineHeight: 1.1,
-                margin: '0.4rem 0'
+                margin: '0.35rem 0'
               }}
             >
               {myQueueItem ? myQueueItem.tokenNumber : 'C-025'}
@@ -251,7 +251,7 @@ export const MyQueue = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
             gap: '1rem',
             padding: '1.25rem',
             backgroundColor: '#f8fafc',
@@ -302,8 +302,8 @@ export const MyQueue = () => {
       </div>
 
       {/* LINE-BY-LINE ACTIVE QUEUE TABLE */}
-      <div className="med-card" style={{ padding: '1.75rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1rem, 3vw, 1.75rem)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
           <div>
             <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>
               Live Queue Sequence for {myQueueItem?.doctorName}

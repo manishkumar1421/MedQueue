@@ -156,8 +156,8 @@ export const DoctorDashboard = () => {
       <div
         className="med-card"
         style={{
-          padding: '2rem',
-          marginBottom: '2rem',
+          padding: 'clamp(1.25rem, 3vw, 2rem)',
+          marginBottom: '1.75rem',
           borderLeft: '6px solid #0284c7'
         }}
       >
@@ -177,13 +177,13 @@ export const DoctorDashboard = () => {
             <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               ACTIVE OPD CONSULTATION
             </span>
-            <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: '#0f172a', margin: '2px 0 0' }}>
+            <h2 style={{ fontSize: 'clamp(1.2rem, 3vw, 1.45rem)', fontWeight: 800, color: '#0f172a', margin: '2px 0 0' }}>
               Current Patient in Room {doctor.roomNumber}
             </h2>
           </div>
 
           {currentPatient && (
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
               <StatusBadge status={currentPatient.status} />
               <PriorityBadge priority={currentPatient.priority} />
             </div>
@@ -195,7 +195,7 @@ export const DoctorDashboard = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))',
                 gap: '1.25rem',
                 backgroundColor: '#f8fafc',
                 padding: '1.25rem',
@@ -334,8 +334,8 @@ export const DoctorDashboard = () => {
       </div>
 
       {/* TODAY'S QUEUE OVERVIEW FOR DOCTOR */}
-      <div className="med-card" style={{ padding: '1.75rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1rem, 3vw, 1.75rem)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
           <div>
             <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>
               Today's Patient Queue ({docQueue.length})

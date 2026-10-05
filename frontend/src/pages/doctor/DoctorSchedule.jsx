@@ -78,7 +78,7 @@ export const DoctorSchedule = () => {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {['Available', 'Busy', 'On Leave', 'Unavailable'].map((st) => (
                 <button
                   key={st}
@@ -103,7 +103,7 @@ export const DoctorSchedule = () => {
           </div>
 
           {/* Consultation Hours */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1.25rem' }}>
             <div className="form-group">
               <label className="form-label">OPD Start Time</label>
               <input

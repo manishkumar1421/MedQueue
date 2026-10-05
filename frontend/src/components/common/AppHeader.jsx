@@ -42,13 +42,13 @@ export const AppHeader = ({ onToggleSidebar }) => {
     <>
       {/* Top Quick Role Switcher Banner */}
       <div className="role-switcher-banner no-print">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-          <span style={{ fontWeight: 700, color: '#0369a1', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-            <Activity size={16} /> MedQueue Live Demo:
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
+          <span style={{ fontWeight: 700, color: '#0369a1', display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.825rem' }}>
+            <Activity size={15} /> Demo Portals:
           </span>
-          <span style={{ color: '#64748b' }}>Switch role to test full workflow:</span>
+          <span className="hide-on-mobile" style={{ color: '#64748b', fontSize: '0.8rem' }}>Switch role:</span>
         </div>
-        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+        <div className="role-pills-wrap">
           {['Patient', 'Receptionist', 'Doctor', 'Admin'].map((r) => (
             <button
               key={r}
@@ -68,26 +68,26 @@ export const AppHeader = ({ onToggleSidebar }) => {
 
       {/* Main Topbar */}
       <header className="app-topbar no-print">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           {onToggleSidebar && (
             <button
               type="button"
               className="btn btn-ghost"
-              style={{ padding: '0.5rem' }}
+              style={{ padding: '0.5rem', borderRadius: '8px' }}
               onClick={onToggleSidebar}
               aria-label="Toggle menu"
             >
-              <Menu size={20} />
+              <Menu size={22} color="#0f172a" />
             </button>
           )}
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
             <div className="live-pulse-dot" />
             <span style={{ fontSize: '0.825rem', fontWeight: 600, color: '#0f766e' }}>
-              Hospital OPD Online
+              OPD Live
             </span>
-            <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>•</span>
-            <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
+            <span className="hide-on-mobile" style={{ fontSize: '0.8rem', color: '#94a3b8' }}>•</span>
+            <span className="hide-on-mobile" style={{ fontSize: '0.8rem', color: '#64748b' }}>
               Room 204 Active
             </span>
           </div>
@@ -135,12 +135,12 @@ export const AppHeader = ({ onToggleSidebar }) => {
                 style={{
                   position: 'absolute',
                   top: '120%',
-                  right: 0,
-                  width: '340px',
+                  right: '-10px',
+                  width: 'min(340px, calc(100vw - 24px))',
                   backgroundColor: '#ffffff',
                   border: '1px solid #e2e8f0',
                   borderRadius: '12px',
-                  boxShadow: '0 10px 25px -5px rgba(15, 23, 42, 0.1)',
+                  boxShadow: '0 10px 25px -5px rgba(15, 23, 42, 0.15)',
                   zIndex: 100,
                   overflow: 'hidden'
                 }}
@@ -205,11 +205,11 @@ export const AppHeader = ({ onToggleSidebar }) => {
           </div>
 
           {/* User Profile Pill */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
             <div
               style={{
-                width: '38px',
-                height: '38px',
+                width: '36px',
+                height: '36px',
                 borderRadius: '50%',
                 backgroundColor: '#e0f2fe',
                 color: '#0284c7',
@@ -218,16 +218,18 @@ export const AppHeader = ({ onToggleSidebar }) => {
                 justifyContent: 'center',
                 fontWeight: 700,
                 fontSize: '0.9rem',
-                border: '1.5px solid #bae6fd'
+                border: '1.5px solid #bae6fd',
+                flexShrink: 0
               }}
+              title={`${currentUser?.name || 'User'} (${role})`}
             >
               {currentUser?.name ? currentUser.name.charAt(0) : 'U'}
             </div>
-            <div style={{ lineHeight: 1.2 }}>
-              <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a' }}>
+            <div className="hide-on-mobile" style={{ lineHeight: 1.2 }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0f172a' }}>
                 {currentUser?.name || 'Guest User'}
               </div>
-              <div style={{ fontSize: '0.75rem', color: '#0284c7', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.72rem', color: '#0284c7', fontWeight: 600 }}>
                 {role}
               </div>
             </div>

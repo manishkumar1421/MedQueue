@@ -124,7 +124,7 @@ export const RegisterPage = () => {
         </div>
 
         {/* Form Card */}
-        <div className="med-card" style={{ padding: '2rem' }}>
+        <div className="med-card" style={{ padding: 'clamp(1.25rem, 5vw, 2rem)' }}>
           <form onSubmit={handleSubmit} noValidate>
 
             {/* Full Name */}
@@ -191,8 +191,8 @@ export const RegisterPage = () => {
               {errors.mobile && <div className="form-error">{errors.mobile}</div>}
             </div>
 
-            {/* Password & Confirm - side by side */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            {/* Password & Confirm - responsive stack on mobile */}
+            <div className="form-row-2">
               {/* Password */}
               <div className="form-group">
                 <label className="form-label">

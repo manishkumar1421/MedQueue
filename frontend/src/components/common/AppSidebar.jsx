@@ -19,7 +19,8 @@ import {
   Layers,
   Calendar,
   Ticket,
-  UserPlus
+  UserPlus,
+  X
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useHospital } from '../../contexts/HospitalContext';
@@ -86,55 +87,60 @@ export const AppSidebar = ({ isOpen, onClose }) => {
       {isOpen && (
         <div
           onClick={onClose}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(15, 23, 42, 0.4)',
-            zIndex: 35
-          }}
-          className="lg:hidden"
+          className="sidebar-backdrop show-on-tablet"
+          aria-hidden="true"
         />
       )}
 
-      <aside
-        className="dashboard-sidebar no-print"
-        style={{
-          transform: isOpen ? 'translateX(0)' : undefined
-        }}
-      >
+      <aside className={`dashboard-sidebar no-print ${isOpen ? 'sidebar-open' : ''}`}>
         {/* Hospital Brand Header */}
         <div
           style={{
-            padding: '1.25rem 1.4rem',
+            padding: '1.15rem 1.25rem',
             borderBottom: '1px solid #e2e8f0',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.75rem'
+            justifyContent: 'space-between',
+            gap: '0.5rem'
           }}
         >
-          <div
-            style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '10px',
-              backgroundColor: '#0284c7',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-              boxShadow: '0 2px 8px rgba(2, 132, 199, 0.25)'
-            }}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div
+              style={{
+                width: '38px',
+                height: '38px',
+                borderRadius: '10px',
+                backgroundColor: '#0284c7',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#ffffff',
+                boxShadow: '0 2px 8px rgba(2, 132, 199, 0.25)',
+                flexShrink: 0
+              }}
+            >
+              <Activity size={22} />
+            </div>
+            <div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+                MedQueue
+              </div>
+              <div style={{ fontSize: '0.7rem', color: '#0284c7', fontWeight: 600 }}>
+                Hospital OPD System
+              </div>
+            </div>
+          </div>
+
+          {/* Close button for mobile & tablet drawer */}
+          <button
+            type="button"
+            className="show-on-tablet btn btn-ghost"
+            style={{ padding: '0.35rem', color: '#64748b' }}
+            onClick={onClose}
+            aria-label="Close navigation"
           >
-            <Activity size={22} />
-          </div>
-          <div>
-            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em' }}>
-              MedQueue
-            </div>
-            <div style={{ fontSize: '0.72rem', color: '#0284c7', fontWeight: 600 }}>
-              Hospital OPD System
-            </div>
-          </div>
+            <X size={20} />
+          </button>
         </div>
 
         {/* User Context Card */}

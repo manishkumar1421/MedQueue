@@ -31,7 +31,7 @@ export const AdminSettings = () => {
         </p>
       </div>
 
-      <div className="med-card" style={{ padding: '2rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}>
         <form onSubmit={handleSubmit}>
           {/* Section 1: Queue Calculation Logic */}
           <div style={{ marginBottom: '2rem' }}>
@@ -43,7 +43,7 @@ export const AdminSettings = () => {
               Waiting Time is calculated dynamically: <code>Patients Ahead × Average Consultation Time</code>.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.25rem' }}>
               <div className="form-group">
                 <label className="form-label">Average Consultation Time (Minutes) <span className="required">*</span></label>
                 <input
@@ -102,7 +102,7 @@ export const AdminSettings = () => {
               Configure how Emergency and Senior Citizen tokens are ordered in active doctor queues.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.25rem' }}>
               <div
                 style={{
                   padding: '1rem',

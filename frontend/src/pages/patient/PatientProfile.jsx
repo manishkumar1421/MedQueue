@@ -38,13 +38,13 @@ export const PatientProfile = () => {
         </p>
       </div>
 
-      <div className="med-card" style={{ padding: '2rem' }}>
+      <div className="med-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}>
         {/* Profile Avatar Header */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '1.5rem',
+            gap: '1.25rem',
             paddingBottom: '1.5rem',
             borderBottom: '1px solid #e2e8f0',
             marginBottom: '1.75rem',
@@ -53,15 +53,15 @@ export const PatientProfile = () => {
         >
           <div
             style={{
-              width: '74px',
-              height: '74px',
+              width: '68px',
+              height: '68px',
               borderRadius: '50%',
               backgroundColor: '#e0f2fe',
               color: '#0284c7',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '1.8rem',
+              fontSize: '1.6rem',
               fontWeight: 800,
               border: '2px solid #bae6fd'
             }}
@@ -72,7 +72,7 @@ export const PatientProfile = () => {
             <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.25rem' }}>
               {formData.name}
             </h2>
-            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
               <span style={{ fontSize: '0.8rem', backgroundColor: '#e0f2fe', color: '#0284c7', padding: '0.2rem 0.6rem', borderRadius: '9999px', fontWeight: 700 }}>
                 {role}
               </span>
@@ -84,7 +84,7 @@ export const PatientProfile = () => {
         </div>
 
         <form onSubmit={handleSubmit}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.25rem' }}>
             <div className="form-group">
               <label className="form-label">Full Name</label>
               <div style={{ position: 'relative' }}>
